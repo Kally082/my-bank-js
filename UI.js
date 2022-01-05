@@ -20,6 +20,9 @@ function exibeMenu() {
     console.log("3 - Depositar");
     console.log("4 - Cadastrar Conta");
     console.log("5 - Listar Contas");
+    console.log("6 - Transferir");
+    console.log("7 - Informações do Cliente");
+    console.log("8 - Deletar conta");
     console.log("9 - Sair");
 }
 
@@ -31,15 +34,16 @@ function escolheOpcao(opcao) {
             numero = Number(prompt('Digite o número da conta: '));
             conta = bd.lerConta(numero);
             console.log("\n Conta: ", numero, "\n Saldo: ", conta._saldo);
+
             break;
+
         case 2:
             console.log('\n Implementar saque.');
             numero = Number(prompt('Digite o número da conta: '));
             conta = bd.lerConta(numero); 
 
             valor = Number(prompt("Digite o valor do saque: "));
-            numero = conta.sacar(valor);
-            console.log("\n Conta: ", conta.numero, "\n Valor do saque: ", valor ,"\n Saldo atual: ", conta._saldo);
+            conta.sacar(valor);
             
             break;
 
@@ -47,7 +51,7 @@ function escolheOpcao(opcao) {
             console.log('\n Implementar deposito.');
             numero = Number(prompt('Digite o número da conta: '));
             conta = bd.lerConta(numero);
-            
+
             valor = Number(prompt("Digite o valor do deposito: "));
             numero = conta.depositar(valor);
             console.log("\n Conta: ", conta.numero, "\n Valor do deposito: ", valor ,"\n Saldo atual: ", conta._saldo);
@@ -69,12 +73,28 @@ function escolheOpcao(opcao) {
 
             bd.cadastrarConta(novaConta);
             console.log("\n Conta cadastrada!");
+
             break;
 
         case 5:
             console.log('\n Listando contas: ');
             bd.listarContas();
+            
             break;
+
+        case 6:
+            console.log('\n Transferir: ');
+            break;
+
+        case 7:
+            console.log('\n Informações do Cliente: ');
+            break;
+
+        case 8:
+            console.log('\n Deletar conta: ');
+            numero = Number(prompt("D"))
+            break;
+
         case 9:
             console.log('\n Saindo da aplicação.');
             break;

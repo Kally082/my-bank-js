@@ -15,12 +15,6 @@ class BD{
         }
     }
 
-    sacar(valor){
-        if(this._saldo >= valor){
-            return this._saldo = this._saldo - valor;
-        }        
-    }
-
     listarContas(){
         console.log('Número de contas: ' + this.contas.size)
         console.log('Contas: ');
