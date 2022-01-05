@@ -22,8 +22,10 @@ class Conta{
     }
 
     transferir(valor, contaDestino){
-        
         if(this._saldo >= valor){
+            if(valor > this.saldo || valor <= 0){
+                return;
+            }
             this._saldo = this._saldo - valor;
             contaDestino.depositar(valor);
         }
