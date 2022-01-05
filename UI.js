@@ -14,7 +14,7 @@ function iniciar() {
 }
 
 function exibeMenu() {
-    console.log("\n\n\t Escolha a opção desejada");
+    console.log("\n\n\t Escolha a opção desejada"); // "\n" pula linha e "\t" dá um tab
     console.log("1 - Consultar Extrato");
     console.log("2 - Sacar");
     console.log("3 - Depositar");
@@ -27,18 +27,27 @@ function escolheOpcao(opcao) {
 
     switch (opcao) {
         case 1:
-            console.log('Implementar extrato.');
+            console.log('\n Implementar extrato.');
+            numero = Number(prompt('Digite o número da conta: '));
+            conta = bd.lerConta(numero);
+            console.log("\n Conta: ", numero, "\n Saldo: ", conta._saldo);
             break;
         case 2:
-            console.log('Implementar saque.');
+            // console.log('\n Implementar saque.');
+            // numero = Number(prompt('Digite o número da conta: '));
+            // conta = bd.lerConta(numero);
+            // valor = Number(prompt("Digite o valor do saque: "));
+            // conta = bd.sacar(valor);
+            // console.log("\n Conta: ", numero, "\n Saldo: ", conta._saldo);
+            
             break;
 
         case 3:
-            console.log('Implementar deposito.');
+            console.log('\n Implementar deposito.');
             break;
 
         case 4:
-            console.log("Cadastrar nova conta.");
+            console.log("\n Cadastrar nova conta.");
 
             const novoCliente = new Cliente();
             novoCliente.nome = prompt('Informe o nome: ');
@@ -46,21 +55,23 @@ function escolheOpcao(opcao) {
 
             const novaConta = new Conta();
             novaConta.agencia = Number(prompt('Informe a agencia: '));
-            novaConta.numero = Number(prompt('Informe o número da conta: '));;
+            novaConta.numero = Number(prompt('Informe o número da conta: '));
+            novaConta._saldo = Number(prompt("Informe seu saldo: "));
             novaConta.cliente = novoCliente;
 
             bd.cadastrarConta(novaConta);
+            console.log("\n Conta cadastrada!");
             break;
 
         case 5:
-            console.log('Listando contas: ');
+            console.log('\n Listando contas: ');
             bd.listarContas();
             break;
         case 9:
-            console.log('Saindo da aplicação.');
+            console.log('\n Saindo da aplicação.');
             break;
         default:
-            console.log("Opção inválida");
+            console.log("\n Opção inválida");
     }
 }
 
