@@ -45,6 +45,12 @@ function escolheOpcao(opcao) {
 
         case 3:
             console.log('\n Implementar deposito.');
+            numero = Number(prompt('Digite o número da conta: '));
+            conta = bd.lerConta(numero);
+            
+            valor = Number(prompt("Digite o valor do deposito: "));
+            numero = conta.depositar(valor);
+            console.log("\n Conta: ", conta.numero, "\n Valor do deposito: ", valor ,"\n Saldo atual: ", conta._saldo);
 
             break;
 
