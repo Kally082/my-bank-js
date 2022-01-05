@@ -33,12 +33,13 @@ function escolheOpcao(opcao) {
             console.log("\n Conta: ", numero, "\n Saldo: ", conta._saldo);
             break;
         case 2:
-            // console.log('\n Implementar saque.');
-            // numero = Number(prompt('Digite o número da conta: '));
-            // conta = bd.lerConta(numero);
-            // valor = Number(prompt("Digite o valor do saque: "));
-            // conta = bd.sacar(valor);
-            // console.log("\n Conta: ", numero, "\n Saldo: ", conta._saldo);
+            console.log('\n Implementar saque.');
+            numero = Number(prompt('Digite o número da conta: '));
+            conta = bd.lerConta(numero);
+
+            valor = Number(prompt("Digite o valor do saque: "));
+            numero = conta.sacar(valor);
+            console.log("\n Conta: ", conta.numero, "\n Valor do saque: ", valor ,"\n Saldo atual: ", conta._saldo);
             
             break;
 
