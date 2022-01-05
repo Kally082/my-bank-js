@@ -35,7 +35,7 @@ function escolheOpcao(opcao) {
         case 2:
             console.log('\n Implementar saque.');
             numero = Number(prompt('Digite o número da conta: '));
-            conta = bd.lerConta(numero);
+            conta = bd.lerConta(numero); 
 
             valor = Number(prompt("Digite o valor do saque: "));
             numero = conta.sacar(valor);
@@ -45,6 +45,7 @@ function escolheOpcao(opcao) {
 
         case 3:
             console.log('\n Implementar deposito.');
+
             break;
 
         case 4:
