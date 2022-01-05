@@ -28,7 +28,7 @@ class Conta{
             contaDestino.depositar(valor);
         }
         else{
-            if(valor > saldo || valor <= 0){
+            if(valor > this.saldo || valor <= 0){
                 return;
             }
         }

@@ -141,7 +141,7 @@ test('teste de transferência: -100 reais da contaA para a contaB', () => {
     contaDoCliente02.depositar(50.0)
     contaDoCliente01.transferir(-100.0, contaDoCliente02);
 
-    expect(contaDoCliente01.saldo).not.toEqual(100.0);
+    expect(contaDoCliente01.saldo).toEqual(100.0);
     expect(contaDoCliente02.saldo).toEqual(50.0); //errado
 });
 
